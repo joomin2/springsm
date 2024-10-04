@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id = "custRepository" class = "edu.sm.cust.repository.CustRepository"></bean>
+<!--    custservice를 만들때는 매게변수를 이렇게 만들어서 사용하겠다는 말-->
+<!--    즉, CustRepository에서 cusrService 객체를 생성안해도됨-->
+    <bean id = "custService" class = "edu.sm.cust.service.CustService">
+        <constructor-arg ref = "custRepository"></constructor-arg>
+    </bean>
+</beans>
